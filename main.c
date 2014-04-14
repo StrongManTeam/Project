@@ -13,13 +13,13 @@ int main()
     defender.health = 2;
 
     switch(attack(&attacker,&defender)){
-        case 0:printf("Cards destroyed !\n");
+        case 0:printf("Картите са унищожени !\n");
         break;
 
-        case 1:printf("Attacker card wins !\n");
+        case 1:printf("Атакуващия пецели !\n");
         break;
 
-        case 2:printf("Defender card wins !\n");
+        case 2:printо("Защитаващия печели !\n");
         break;
 
         case 3:printf("Cards survived the battle !\n");
