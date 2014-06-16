@@ -1,29 +1,20 @@
 #include <stdio.h>
-#include "card.h"
+#include "manapool.h"
 
 int main()
 {
-    struct card_t attacker;
-    struct card_t defender;
+    struct manapool_t pool;
+    set_mana(&pool,5);
+    printf("Crystals in pool: %d\n",pool.crystals);
 
-    attacker.attack = 2;
-    attacker.health = 4;
-
-    defender.attack = 4;
-    defender.health = 2;
-
-    switch(attack(&attacker,&defender)){
-        case 0:printf("Картите са унищожени !\n");
-        break;
-
-        case 1:printf("Атакуващия пецели !\n");
-        break;
-
-        case 2:printо("Защитаващия печели !\n");
-        break;
-
-        case 3:printf("Cards survived the battle !\n");
-        break;
+    struct card_t card;
+    card.price = 5;
+    if(can_put_card(card,pool)){
+        printf("You can put the card\n");
     }
+    else{
+        printf("You don't have enough mana to put card that needs %d mana\n",card.price);
+    }
+
     return 0;
 }
